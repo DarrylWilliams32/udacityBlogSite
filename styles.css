@@ -1,6 +1,12 @@
 /*Sets universal styles*/
 * {
-    font-size: 20px;
+    --primary-brandcolor: #1C00FF;
+    --secondary-brandcolor: #F279DC;
+    --primary-whitealternative: #FAF9F6;
+}
+
+:root {
+    font-size: 15px;
 }
 
 body {
@@ -13,70 +19,186 @@ body {
     padding: 0;
 }
 
+.lists a {
+    text-decoration: none;
+}
+
 /*Sets grid rules*/
 .siteGrid {
     display: grid;
     grid-template:
-        [row1-start] "header header header header" 50px [row1-end]
-        [row2-start] "sidebar main main main" auto [row2-end]
-        [row3-start] "footer footer footer footer" 50px [row2-end]
-        / auto 90px auto;
+        [row1-start] "header header header header" 60px [row1-end]
+        [row2-start] "main main main main" auto [row2-end]
+        [row3-start] "recentposts recentposts recentposts recentposts" auto [row3-end]
+        [row4-start] "footer footer footer footer" 60px [row4-end]
+        / auto 60px auto;
 }
 
 /*Sets header styles*/
 header {
-    background-color: grey;
+    background-color: var(--primary-brandcolor);
+    color: #FAF9F6;
     grid-area: header;
     margin: 0;
+    text-align: center;
 }
 
 header h1 {
-    justify-self: center;
+    margin-top: 25px;
 }
 
-
-.navContainer {
-    display: grid;
-    justify-content: end;
-
+.logo {
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    align-self: center;
 }
 
 /*Top navigation styles*/
+.navContainer {
+    display: grid;
+    justify-content: end;
+}
+
 .navBar {
     position: absolute;
     top: 0;
     right: 0;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .navBar li {
     display: inline-grid;
     grid-auto-flow: column; /* Arrange items in a single row */
-    gap: 10px; /* Add some spacing between menu items */
+    margin-right: 5px;
 }
 
 .navBar li:hover {
-    color: blue;
-    border-bottom: solid blue 2px;
+    color: var(--secondary-brandcolor);
+    border-bottom: solid var(--secondary-brandcolor) 2px;
 }
 
+/*Main section styles*/
 main {
+    color: var(--primary-whitealternative);
     background-color: yellow;
+    background-image: url('resources/images/crazycatbanner.png');
+    background-size: cover;
+    background-position: center;
     grid-area: main;
+}
+
+main p {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-wrap: wrap;
 }
 
 /*Side bar styles*/
 .sideNavContainer {
-    grid-area: sidebar;
-    justify-content: center;
+    grid-area: recentposts;
+}
+
+.sideNavContainer h3 {
+    text-decoration: underline;
+}
+
+.sideNav a {
+    color: black;
 }
 
 .sideNav li {
-    column-gap: 20px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.sideNav li a {
+    font-size: 1.2rem;
 }
 
 footer {
     background-color: blue;
     grid-area: footer;
+    font-size: .75rem;
+    text-align: center;
+    color: white;
+}
+
+/*Sets media inquiries for medium screens*/
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .siteGrid {
+        display: grid;
+        grid-template:
+            [row1-start] "header header header header header" 60px [row1-end]
+            [row2-start] "sidebar main main main main" auto [row2-end]
+            [row3-start] "footer footer footer footer footer" 50px [row2-end]
+            / auto 90px auto;
+    }
+
+    /*sets site nav styles*/
+    .navBar {
+        font-size: 1.1rem;
+    }
+
+    .navBar li:hover {
+        text-decoration: none;
+        background-color: var(--secondary-brandcolor);
+        padding: 5px;
+        color: white;
+    }
+
+    main h2 {
+        margin-left: 10px;
+    }
+    .sideNavContainer {
+        grid-area: sidebar;
+        text-wrap: wrap;
+    }
+
+    .sideNavContainer h3 {
+        text-align: center;
+    }
+
+    /*footer styles*/
+    footer {
+        font-size: 1rem;
+        align-content: center;
+    }
+}
+
+/*Sets media inquiries for large screens*/
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+
+/*Sets grid rules*/
+.siteGrid {
+    display: grid;
+    grid-template:
+        [row1-start] "header header header header header header" 45px [row1-end]
+        [row2-start] "main main main main main main" 250px [row2-end]
+        [row3-start] "recentposts recentposts recentposts recentposts recentposts recentposts" auto [row3-end]
+        [row4-start] "footer footer footer footer footer footer" 60px [row4-end]
+        / auto 60px auto;
+}
+
+header h1 {
+    top: 0;
+    margin-top: 0;
+}
+
+.logo {
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.navBar {
+    font-size: 1.2rem;
+}
+main {
+text-align: center;
+align-items: center;
+}
 }
