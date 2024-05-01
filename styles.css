@@ -104,6 +104,7 @@ main p {
     text-wrap: wrap;
 }
 
+
 /*Side bar styles*/
 .sideNavContainer {
     grid-area: recentposts;

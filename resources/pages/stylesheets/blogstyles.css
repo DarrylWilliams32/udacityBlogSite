@@ -1,0 +1,192 @@
+/*Sets universal styles*/
+* {
+    --primary-brandcolor: #1C00FF;
+    --secondary-brandcolor: #F279DC;
+    --primary-whitealternative: #FAF9F6;
+    --primary-accentpurple: #AF79F2;
+}
+
+:root {
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+}
+
+.lists {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lists a {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 8%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: var(--secondary-brandcolor);
+}
+
+/*Sets grid rules*/
+.blogPostGrid {
+    display: grid;
+    grid-template:
+        [row1-start] "header header header header" 60px [row1-end]
+        [row2-start] "main main main main" auto [row2-end]
+        [row3-start] "recentposts recentposts recentposts recentposts" auto [row3-end]
+        [row4-start] "about about about about" auto [row4-end]
+        [row5-start] "footer footer footer footer" 60px [row5-end]
+        / auto 60px auto;
+}
+
+/*Sets header styles*/
+header {
+    background-color: var(--primary-brandcolor);
+    color: #FAF9F6;
+    grid-area: header;
+    margin: 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 25px;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    align-self: center;
+
+}
+
+/*Top navigation styles*/
+.navContainer {
+    display: grid;
+    justify-content: end;
+}
+
+.navBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.navBar li {
+    display: inline-grid;
+    grid-auto-flow: column; /* Arrange items in a single row */
+    margin-right: 5px;
+}
+
+.navBar li:hover {
+    color: var(--secondary-brandcolor);
+    border-bottom: solid var(--secondary-brandcolor) 2px;
+}
+
+/*sets post content styles*/
+main {
+    grid-area: main;
+}
+
+main h2 {
+    text-align: center;
+}
+
+.blogBannerPic {
+    width: 100%;
+}
+
+/*sets recent post styles*/
+.recent-posts-container {
+    grid-area: recentposts;
+    border-bottom: solid black 5px;
+    border-top: solid black 5px;
+    width: 100%;
+}
+
+.recent-posts-container h3 {
+    text-decoration: underline;
+}
+
+.recent-posts a {
+    color: black;
+    list-style: none;
+}
+
+.recent-posts li {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: solid black 1px;
+    justify-content: center;
+    text-align: center;
+    text-wrap: wrap;
+    line-height: 1;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.recent-posts li a {
+    font-size: 1.2rem;
+}
+
+.recent-post-items {
+    display: inline-flex;
+    width: 165px;
+    height: 165px;
+    justify-content: space-between;
+    margin: 0;
+}
+
+/*sets about section styles*/
+.aboutSection {
+    grid-area: about;
+    background-color:var(--primary-whitealternative);
+    margin-bottom: 10px;
+   
+}
+
+.aboutSection h3 {
+    background-color: var(--primary-accentpurple);
+    padding: 10px;
+    margin-top: 0;
+}
+
+.aboutAuthor {
+    display: flex;
+    text-wrap: wrap;
+    align-items: center;
+}
+.mug {
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.mug {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/*starts footer styles*/
+footer {
+    background-color: blue;
+    grid-area: footer;
+    font-size: .75rem;
+    text-align: center;
+    color: white;
+}
