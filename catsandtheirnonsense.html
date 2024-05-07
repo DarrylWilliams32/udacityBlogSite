@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets\blogstyles.css">
+    <link rel="stylesheet" href="resources\pages\stylesheets\blogstyles.css">
     <title>Cats are crazy</title>
 </head>
 <body>
     <div class="blogPostGrid">
         <header>
             <div class="logoContainer">
-                <img src="secResources/crazycatzlogo.png" class="logo" alt="Logo of crazy cats corner">
+                <img src="resources\images\crazycatzlogo.png" class="logo" alt="Logo of crazy cats corner">
             </div>
             <h1>Crazy Catz Corner</h1>
             <nav class="navContainer">
                 <ul class="navBar lists">
-                    <li>Home</li>
+                    <li><a href="index.html">Home</a></li>
                     <li>Blog</li>
                     <li>About Us</li>
                     <li>Contact</li>
@@ -24,7 +24,7 @@
         </header>
         <main class="blogPost">
             <h2>Cats and their nonsense</h2>
-                <img src="secResources/catsplaying.jpg" class="blogBannerPic" alt="Photo by Pixabay: https://www.pexels.com/photo/tabby-kittens-on-floral-comforter-160755/">
+                <img src="resources\images\catsplaying.jpg" class="blogBannerPic" alt="Photo by Pixabay: https://www.pexels.com/photo/tabby-kittens-on-floral-comforter-160755/">
                 <p>
                     In the cozy corners of our home, amidst the soft purrs and gentle paw pats, resides a furry mischief-maker whose antics never fail to brighten our days. 
                     Let me regale you with a tale of one particularly eventful day in the life of our beloved feline friend, Squeeker.
@@ -52,7 +52,7 @@
                     and joy. For in the tapestry of life, it's the threads of mischief and mayhem that add color and character to our days.
                 </p>
         </main>
-        <!--Creates a nav on side of screen in bigger screens-->
+        <!--Creates recent posts section-->
         <section class="recent-posts-container">
             <h3>Recent Blog Posts:</h3>
             <ul class="recent-posts lists">
@@ -60,14 +60,12 @@
                     <li>
                         <a href="#"><strong>My cat has lost it</strong></a><br>
                         <span><em>Date: 4/28/2024</em></span>
-                        <button type="button" class="btn">Read More</button>
                     </li>
                 </div>
                 <div class="recent-post-items">
                     <li>
                         <a href="#"><strong>No clean counters with cats</strong></a><br>
                         <span><em>Date: 4/27/2024</em></span> 
-                        <button type="button" class="btn">Read More</button>
                     </li>
                 </div>
             </ul>
@@ -75,13 +73,21 @@
         <!--Creates about section-->
         <section class="aboutSection">
             <h3>Meet the author</h3>
+            <span><em>Current role:</em> Freelance Software Engineer | Diamond Screens LLC</span>
             <div class="aboutAuthor">
-                <img src="secResources/mug.jpg" class="mug" width="90px" height="90px">
+                <img src="resources\images\mug.jpg" class="mug" width="90px" height="90px">
                 <span class="bio">Darryl has been a freelance writer since he graduated Highschool in 2008. 
                                 He got his start writing for a freelance platform that taught college students how to make extra money in their spare time. 
                                 These days Darryl has expanded his writing into writing code. You can find him toiling away in his home office either writing 
                                 code or shredding his guitar 🎸.
                 </span>
+            </div>
+            <div class="social-bar">
+                <!--Free license on these icons/ not for professional use-->
+                <img src="resources\images\icons\facebook.png">
+                <img src="resources\images\icons\IG.png">
+                <img src="resources/images/icons/linkedin.png">
+                <img src="resources\images\icons\twitter.png">
             </div>
         </section>
         <footer>
