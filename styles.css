@@ -166,8 +166,9 @@ footer {
     color: white;
 }
 
-/*Sets media inquiries for medium screens*/
-@media screen and (min-width: 600px) and (max-width: 900px) {
+
+/*Sets new layout for medium screens and up*/
+@media screen and (min-width: 600px) {
     .siteGrid {
         display: grid;
         grid-template:
@@ -177,8 +178,14 @@ footer {
             [row4-start] "footer footer footer footer footer" 50px [row4-end]
             / auto 90px auto;
     }
-    :root {
-        font-size: 16px;
+    /*asigns area their designated grid areas*/
+    header {
+        grid-area: header;
+    }
+
+    .sideNavContainer {
+        grid-area: sidebar;
+        text-wrap: wrap;
     }
 
     /*sets site nav styles*/
@@ -192,15 +199,25 @@ footer {
     main h2 {
         margin-left: 10px;
     }
-    .sideNavContainer {
-        grid-area: sidebar;
-        text-wrap: wrap;
-    }
 
     .sideNavContainer h3 {
         text-align: center;
     }
 }
+
+
+/*Sets media inquiries for medium screens*/
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    :root {
+        font-size: 16px;
+    }
+
+    main {
+        height: 275px;
+        width: auto;
+    }
+}
+    
 
 /*Sets universal media inquiries for large screens and beyond*/
 @media screen and (min-width: 901px) {
@@ -238,20 +255,18 @@ footer {
 .siteGrid {
     display: grid;
     grid-template:
-        [row1-start] "header header header header header header" 45px [row1-end]
-        [row2-start] "main main main main main main" 300px [row2-end]
-        [row3-start] "recentposts recentposts recentposts recentposts recentposts recentposts" auto [row3-end]
-        [row4-start] "about about about about about about"
-        [row5-start] "footer footer footer footer footer footer" 60px [row5-end]
-        / auto 60px auto;
+        [row1-start] "header header header header header" 60px [row1-end]
+        [row2-start] "sidebar main main main main" auto [row2-end]
+        [row3-start] "about about about about about" auto [row3-end]
+        [row4-start] "footer footer footer footer footer" 50px [row4-end]
+        / auto 90px auto;
 }
 
     :root {
         font-size: 18px;
     }
     header h1 {
-        top: 0;
-        margin-top: 0;
+        margin-bottom: 20px;
     }
 
     .logo {
@@ -259,21 +274,25 @@ footer {
         margin-left: 10px;
         margin-bottom: 5px;
     }
+
+    main {
+        height: 325px;
+        width: auto;
+    }
 }
 
 /*Sets media inquiry for X-Large screens*/
 @media screen and (min-width: 1201px) {
 
-.siteGrid {
-    display: grid;
-    grid-template:
-        [row1-start] "header header header header header header" 80px [row1-end]
-        [row2-start] "main main main main main main" 350px [row2-end]
-        [row3-start] "recentposts recentposts recentposts recentposts recentposts recentposts" 300px [row3-end]
-        [row4-start] "about about about about about about"
-        [row5-start] "footer footer footer footer footer footer" 60px [row5-end]
-        / auto 60px auto;
-}
+    .siteGrid {
+        display: grid;
+        grid-template:
+            [row1-start] "header header header header header" 80px [row1-end]
+            [row2-start] "sidebar main main main main" auto [row2-end]
+            [row3-start] "about about about about about" auto [row3-end]
+            [row4-start] "footer footer footer footer footer" 50px [row4-end]
+            / auto 90px auto;
+    }
 
     :root {
         font-size: 20px;
@@ -283,4 +302,8 @@ footer {
         justify-self: center;
     }
 
+    main {
+        height: 400px;
+        width: auto;
+    }
 }
