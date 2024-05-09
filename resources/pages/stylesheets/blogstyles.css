@@ -86,6 +86,7 @@ header h1 {
     display: inline-grid;
     grid-auto-flow: column; /* Arrange items in a single row */
     margin-right: 5px;
+    list-style: none;
 }
 
 .navBar li:hover {
@@ -93,9 +94,14 @@ header h1 {
     border-bottom: solid var(--secondary-brandcolor) 2px;
 }
 
+.navBar a {
+    text-decoration: none;
+}
+
 /*sets post content styles*/
 main {
     grid-area: main;
+    margin-bottom: 0;
 }
 
 main h2 {
@@ -103,19 +109,22 @@ main h2 {
 }
 
 .blogBannerPic {
-    width: 100%;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
 }
 
 /*sets recent post styles*/
 .recent-posts-container {
     grid-area: recentposts;
-    border-bottom: solid black 5px;
-    border-top: solid black 5px;
     width: 100%;
+    margin-top: 0;
 }
 
 .recent-posts-container h3 {
     text-decoration: underline;
+    background-color: var(--primary-accentpurple);
+    padding: 10px;
 }
 
 .recent-posts a {
@@ -127,10 +136,7 @@ main h2 {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
-    border: solid black 1px;
     justify-content: center;
-    text-align: center;
     text-wrap: wrap;
     line-height: 1;
     margin: 0;
@@ -189,4 +195,24 @@ footer {
     font-size: .75rem;
     text-align: center;
     color: white;
+}
+
+/*Starts media inquiries*/
+@media screen (min-width: 600px) and (max-width: 900px) {
+    :root {
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    :root {
+        font-size: 20px;
+    }
 }
