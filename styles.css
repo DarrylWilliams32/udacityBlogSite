@@ -1,94 +1,100 @@
-/*Sets universal styles*/
-* {
+/* Sets universal styles */
+:root {
     --primary-brandcolor: #1C00FF;
     --secondary-brandcolor: #F279DC;
     --primary-whitealternative: #FAF9F6;
     --primary-accentpurple: #AF79F2;
-}
-
-:root {
     font-size: 15px;
-}
-
-body {
+  }
+  
+  * {
+    box-sizing: border-box; /* Ensures padding and border are included in element width and height */
+  }
+  
+  body {
     display: grid;
-}
-
-.lists {
-    list-style-type: none;
+    font-family: sans-serif; /* Consider adding a specific font family */
+  }
+  
+  .lists {
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.lists a {
+  }
+  
+  .lists a {
     text-decoration: none;
-}
-
-/*Sets grid rules*/
-.siteGrid {
+  }
+  
+  /* Sets grid rules */
+  .siteGrid {
     display: grid;
-    grid-template:
-        [row1-start] "header header header header" 60px [row1-end]
-        [row2-start] "main main main main" auto [row2-end]
-        [row3-start] "recentposts recentposts recentposts recentposts" auto [row3-end]
-        [row4-start] "about about about about" auto [row4-end]
-        [row5-start] "footer footer footer footer" 60px [row5-end]
-        / auto 60px auto;
-}
-
-/*Sets header styles*/
-header {
+    grid-template-columns: auto 90px auto;
+    grid-template-rows: 
+      60px
+      auto
+      auto
+      auto
+      60px;
+    grid-template-areas:
+      "header header header header header"
+      "main main main main main"
+      "recentposts recentposts recentposts recentposts recentposts"
+      "about about about about about"
+      "footer footer footer footer footer";
+  }
+  
+  /* Sets header styles */
+  header {
     background-color: var(--primary-brandcolor);
-    color: #FAF9F6;
+    color: var(--primary-whitealternative);
     grid-area: header;
     margin: 0;
     text-align: center;
-}
-
-header h1 {
+  }
+  
+  header h1 {
     margin-top: 25px;
-}
-
-
-.logo {
+  }
+  
+  .logo {
     width: 40px;
     height: auto;
     position: absolute;
     left: 0;
-    margin-top: 10px;
+    top: 10px;
     margin-bottom: 5px;
     margin-left: 15px;
     align-self: center;
-
-}
-
-/*Top navigation styles*/
-.navContainer {
+  }
+  
+  /* Top navigation styles */
+  .navContainer {
     display: grid;
     justify-content: end;
-}
-
-.navBar {
+  }
+  
+  .navBar {
     position: absolute;
     top: 0;
     right: 0;
     margin-top: 10px;
     margin-right: 10px;
-}
-
-.navBar li {
+  }
+  
+  .navBar li {
     display: inline-grid;
     grid-auto-flow: column; /* Arrange items in a single row */
     margin-right: 5px;
-}
-
-.navBar li:hover {
+  }
+  
+  .navBar li:hover {
     color: var(--secondary-brandcolor);
-    border-bottom: solid var(--secondary-brandcolor) 2px;
-}
-
-/*Main section styles*/
-main {
+    border-bottom: 2px solid var(--secondary-brandcolor);
+  }
+  
+  /* Main section styles */
+  main {
     color: var(--primary-whitealternative);
     background-color: yellow;
     background-image: url('resources/images/crazycatbanner.png');
@@ -96,214 +102,203 @@ main {
     background-position: center;
     grid-area: main;
     text-align: center;
-}
-
-main p {
-    margin-left: 10px;
-    margin-right: 10px;
+  }
+  
+  main p {
+    margin: 10px;
     text-wrap: wrap;
-}
-
-
-/*Side bar styles*/
-.sideNavContainer {
+  }
+  
+  /* Side bar styles */
+  .sideNavContainer {
     grid-area: recentposts;
     background-color: var(--primary-accentpurple);
-}
-
-.sideNavContainer h3 {
+  }
+  
+  .sideNavContainer h3 {
     text-decoration: underline;
-}
-
-.sideNav a {
+  }
+  
+  .sideNav a {
     color: black;
-}
-
-.sideNav li {
+  }
+  
+  .sideNav li {
     padding: 10px;
     margin-left: 10px;
-}
-
-.sideNav li a {
+  }
+  
+  .sideNav li a {
     font-size: 1.2rem;
-}
-
-.aboutSection {
+  }
+  
+  .aboutSection {
     grid-area: about;
     background-color: lightgrey;
-    border-top: solid black 2px;
-    border-bottom: solid black 2px;
-}
-
-.aboutSection h3 {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .aboutSection h3 {
     text-align: center;
-}
-
-.aboutAuthor {
+  }
+  
+  .aboutAuthor {
     display: flex;
     text-wrap: wrap;
     align-items: center;
-}
-
-.mug {
+  }
+  
+  .mug {
     border-radius: 50%;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.bio {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-footer {
+    margin: 10px;
+  }
+  
+  .bio {
+    margin: 10px;
+  }
+  
+  footer {
     background-color: blue;
     grid-area: footer;
-    font-size: .75rem;
+    font-size: 0.75rem;
     text-align: center;
     color: white;
-}
-
-
-/*Sets new layout for medium screens and up*/
-@media screen and (min-width: 600px) {
+  }
+  
+  /* Sets new layout for medium screens and up */
+  @media screen and (min-width: 600px) {
     .siteGrid {
-        display: grid;
-        grid-template:
-            [row1-start] "header header header header header" 60px [row1-end]
-            [row2-start] "sidebar main main main main" auto [row2-end]
-            [row3-start] "about about about about about" auto [row3-end]
-            [row4-start] "footer footer footer footer footer" 50px [row4-end]
-            / auto 90px auto;
+      grid-template-columns: auto 90px auto;
+      grid-template-rows:
+        60px
+        auto
+        auto
+        50px;
+      grid-template-areas:
+        "header header header header header"
+        "sidebar main main main main"
+        "about about about about about"
+        "footer footer footer footer footer";
     }
-    /*asigns area their designated grid areas*/
+  
     header {
-        grid-area: header;
+      grid-area: header;
     }
-
+  
     .sideNavContainer {
-        grid-area: sidebar;
-        text-wrap: wrap;
+      grid-area: sidebar;
+      text-wrap: wrap;
     }
-
-    /*sets site nav styles*/
+  
+    /* sets site nav styles */
     .navBar li:hover {
-        text-decoration: none;
-        background-color: var(--secondary-brandcolor);
-        padding: 5px;
-        color: white;
+      text-decoration: none;
+      background-color: var(--secondary-brandcolor);
+      padding: 5px;
+      color: white;
     }
-
+  
     main h2 {
-        margin-left: 10px;
+      margin-left: 10px;
     }
-
+  
     .sideNavContainer h3 {
-        text-align: center;
+      text-align: center;
     }
-}
-
-
-/*Sets media inquiries for medium screens*/
-@media screen and (min-width: 600px) and (max-width: 900px) {
+  }
+  
+  /* Sets media inquiries for medium screens */
+  @media screen and (min-width: 600px) and (max-width: 900px) {
     :root {
-        font-size: 16px;
+      font-size: 16px;
     }
-
+  
     main {
-        height: 275px;
-        width: auto;
+      height: 275px;
+      width: auto;
     }
-}
-    
-
-/*Sets universal media inquiries for large screens and beyond*/
-@media screen and (min-width: 901px) {
+  }
+  
+  /* Sets universal media inquiries for large screens and beyond */
+  @media screen and (min-width: 901px) {
     main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-position: initial;
-        margin-bottom: 0;
-        }
-    
-        main p {
-            max-width: 90%;
-        }
-
-        .logo {
-            width: 40px;
-            height: auto;
-        }
-        .sideNavContainer {
-            background-color: var(--primary-whitealternative);
-            margin-top: 0;
-        }
-        .sideNavContainer h3 {
-            width: 100%;
-            padding-top: 20px;
-            background-color: var(--primary-accentpurple);
-            margin: 0;
-        }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-position: initial;
+      margin-bottom: 0;
     }
-
-@media screen and (min-width: 901px) and (max-width: 1200px) {
-    
-/*Sets grid rules*/
-.siteGrid {
-    display: grid;
-    grid-template:
-        [row1-start] "header header header header header" 60px [row1-end]
-        [row2-start] "sidebar main main main main" auto [row2-end]
-        [row3-start] "about about about about about" auto [row3-end]
-        [row4-start] "footer footer footer footer footer" 50px [row4-end]
-        / auto 90px auto;
-}
-
+  
+    main p {
+      max-width: 90%;
+    }
+  
+    .logo {
+      width: 40px;
+      height: auto;
+    }
+  
+    .sideNavContainer {
+      background-color: var(--primary-whitealternative);
+      margin-top: 0;
+    }
+  
+    .sideNavContainer h3 {
+      width: 100%;
+      padding-top: 20px;
+      background-color: var(--primary-accentpurple);
+      margin: 0;
+    }
+  }
+  
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
     :root {
-        font-size: 18px;
+      font-size: 18px;
     }
+  
     header h1 {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
-
+  
     .logo {
-        margin-top: 3px;
-        margin-left: 10px;
-        margin-bottom: 5px;
+      margin-top: 3px;
+      margin-left: 10px;
+      margin-bottom: 5px;
     }
-
+  
     main {
-        height: 325px;
-        width: auto;
+      height: 325px;
+      width: auto;
     }
-}
-
-/*Sets media inquiry for X-Large screens*/
-@media screen and (min-width: 1201px) {
-
+  }
+  
+  /* Sets media inquiry for X-Large screens */
+  @media screen and (min-width: 1201px) {
     .siteGrid {
-        display: grid;
-        grid-template:
-            [row1-start] "header header header header header" 80px [row1-end]
-            [row2-start] "sidebar main main main main" auto [row2-end]
-            [row3-start] "about about about about about" auto [row3-end]
-            [row4-start] "footer footer footer footer footer" 50px [row4-end]
-            / auto 90px auto;
+      grid-template-columns: auto 90px auto;
+      grid-template-rows:
+        80px
+        auto
+        auto
+        50px;
+      grid-template-areas:
+        "header header header header header"
+        "sidebar main main main main"
+        "about about about about about"
+        "footer footer footer footer footer";
     }
-
+  
     :root {
-        font-size: 20px;
+      font-size: 20px;
     }
-
+  
     .logo {
-        justify-self: center;
+      justify-self: center;
     }
-
+  
     main {
-        height: 400px;
-        width: auto;
+      height: 400px;
+      width: auto;
     }
-}
+  }
